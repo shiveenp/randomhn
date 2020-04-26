@@ -1,0 +1,25 @@
+{
+  "name": "randomhn",
+  "version": "1.0.0",
+  "description": "Node utility that enables getting random hn discussions",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shavz/randomhn.git"
+  },
+  "author": "Shiveen Pandita",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shavz/randomhn/issues"
+  },
+  "homepage": "https://github.com/shavz/randomhn#readme",
+  "dependencies": {
+    "got": "^11.0.2",
+    "hacker-news-api": "^2.0.0",
+    "random-js": "^2.1.0"
+  }
+}
