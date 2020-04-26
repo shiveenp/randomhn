@@ -18,8 +18,9 @@
   },
   "homepage": "https://github.com/shavz/randomhn#readme",
   "dependencies": {
+    "and": "0.0.3",
+    "build": "^0.1.4",
     "got": "^11.0.2",
-    "hacker-news-api": "^2.0.0",
     "random-js": "^2.1.0"
   }
 }

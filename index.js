@@ -7,7 +7,7 @@ const random = new Random();
 
 exports.handler = async (event) => {
     const link = await getRandomHnArticleLink();
-    return link;
+    return link; 
 };
 
 const getRandomHnArticleLink = async () => {
