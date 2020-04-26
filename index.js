@@ -5,6 +5,7 @@ const random = new Random();
 
 exports.handler = async (event) => {
   const link = await getRandomHnArticleLink();
+  console.log(link);
   const response = {
     statusCode: 301,
     headers: {
