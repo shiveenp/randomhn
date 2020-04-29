@@ -7,7 +7,7 @@ exports.handler = async (event) => {
   const link = await getRandomHnArticleLink();
   console.log(link);
   const response = {
-    statusCode: 301,
+    statusCode: 302,
     headers: {
       Location: link,
     },
