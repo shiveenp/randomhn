@@ -4,19 +4,12 @@ const { Random } = require("random-js");
 const random = new Random();
 const maxfirstHitNotStoryIterations = 10;
 
-exports.handler = async (event) => {
-  const link = await getRandomHnArticleLink();
-  console.log(link);
-  const response = {
-    statusCode: 302,
-    headers: {
-      Location: link,
-    },
-  };
-  return response;
+exports.handler = async () => {
+  const itemId = await getRandomHnArticleId();
+  return itemId;
 };
 
-const getRandomHnArticleLink = async () => {
+const getRandomHnArticleId = async () => {
   let topId = '';
   let randomItemId = '';
   let hits = 0;
@@ -28,11 +21,8 @@ const getRandomHnArticleLink = async () => {
   );
   topId = response.body;
   while(true) {
-    console.log(hits);
     randomItemId = random.integer(1, topId);
-    console.log(randomItemId);
     const itemResponse = await getItemMetadata(randomItemId);
-    console.log(itemResponse);
     if(itemResponse.type === 'story' || itemResponse.type === 'poll') {
       break;
     };
@@ -44,8 +34,8 @@ const getRandomHnArticleLink = async () => {
     }
     hits++;
   }
-  const link = "https://news.ycombinator.com/item?id=" + randomItemId;
-  return link;
+  console.log(randomItemId);
+  return randomItemId;
 };
 
 const getItemMetadata = async (id) => {
